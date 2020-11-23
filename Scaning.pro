@@ -26,18 +26,18 @@ plot,m1, /data
 window,1, xsize = size/2, ysize = size/2, xpos = size/2, ypos = 0
 plot,n1, /data
 
-head = [2,size,size,1]
+;head = [2,size,size,1]
 
-openw,1,'scan1.my'
-writeu,1,head
-writeu,1,m1
-close,1
+;openw,1,'scan1.my'
+;writeu,1,head
+;writeu,1,m1
+;close,1
 
 
-openw,2,'scan2.my'
-writeu,2,head
-writeu,2,n1
-close,2
+;openw,2,'scan2.my'
+;writeu,2,head
+;writeu,2,n1
+;close,2
 
 
 
