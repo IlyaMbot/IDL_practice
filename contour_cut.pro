@@ -6,7 +6,6 @@ size1 = 1024
 file = dialog_pickfile()
 original = readfits(file, header)
 original = original > 1
-original = original < 200
 
 a = rebin(original, size1, size1)
 
@@ -20,7 +19,7 @@ ay = (indgen(size1) - var1 / size2) * rsl * size2
 
 ;create a new window
 window, 0, xsize = size1, ysize = size1, xpos = 0, ypos = 0
-contour, a, ax, ay, xstyle = 1, ystyle = 1, charsize = 1.5
+contour, a, ax, ay, xstyle = 1, ystyle = 1, charsize = 1.5, levels = max(a)*0
 
 px = round(!d.x_size*(!x.window[1] - !x.window[0]))
 py = round(!d.x_size*(!y.window[1] - !y.window[0]))
@@ -58,9 +57,9 @@ ax1 = (indgen(n_elements(p[*,0])) - var) * rsl
 ay1 = (indgen(n_elements(p[0,*])) - var1) * rsl 
 
 
-window, 1, xsize = (x1 - x) * size2, ysize = (y1 - y) * size2, xpos = 0, ypos = 0
+window, 1, xsize = (x1 - x) * size2 * 2, ysize = (y1 - y) * size2 * 2, xpos = 0, ypos = 0
 
-contour, p, ax1, ay1, xstyle = 1, ystyle = 1, charsize = 1.5
+contour, p, ax1, ay1, xstyle = 1, ystyle = 1, charsize = 1.5, levels = max(a)*0
 
 px1 = round(!d.x_size * (!x.window[1] - !x.window[0]))
 py1 = round(!d.y_size * (!y.window[1] - !y.window[0]))
